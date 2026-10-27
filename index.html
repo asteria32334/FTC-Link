@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FTC Link — User Guide & Features</title>
+    <style>
+        :root {
+            --bg-color: #1e1e1e;
+            --panel-bg: #252526;
+            --sidebar-bg: #181818;
+            --text-color: #d4d4d4;
+            --accent-color: #528eff;
+            --accent-green: #4ec9b0;
+            --border-color: #3e3e42;
+            --code-bg: #101010;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Sidebar Navigation */
+        sidebar {
+            width: 280px;
+            background-color: var(--sidebar-bg);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            padding: 24px 16px;
+            flex-shrink: 0;
+            overflow-y: auto;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+            padding-left: 8px;
+        }
+
+        .brand-icon {
+            width: 32px;
+            height: 32px;
+            background-color: #ffffff;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #000000;
+            font-size: 15px;
+            letter-spacing: -1px;
+        }
+
+        .brand-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .nav-item a {
+            display: block;
+            padding: 9px 12px;
+            color: #a0a0a0;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-item a:hover, .nav-item a.active {
+            background-color: var(--panel-bg);
+            color: #ffffff;
+        }
+
+        /* Main Content Area */
+        main {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 40px 60px;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #a0a0a0;
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+
+        section {
+            margin-bottom: 48px;
+            scroll-margin-top: 40px;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        p, li {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text-color);
+        }
+
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 16px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Cards & Highlight Boxes */
+        .card {
+            background-color: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 18px;
+            margin-bottom: 16px;
+        }
+
+        .card h3 {
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        code {
+            font-family: "JetBrains Mono", Consolas, Monaco, monospace;
+            background-color: var(--code-bg);
+            color: var(--accent-green);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 13.5px;
+        }
+
+        pre {
+            background-color: var(--code-bg);
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 16px 0;
+        }
+
+        pre code {
+            padding: 0;
+            background: none;
+            color: #9cdcfe;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background-color: var(--accent-color);
+            color: #ffffff;
+            border-radius: 50%;
+            font-size: 12px;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+                height: auto;
+                overflow: auto;
+            }
+            sidebar {
+                width: 100%;
+                height: auto;
+            }
+            main {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <sidebar>
+        <div class="brand">
+            <div class="brand-icon">FL</div>
+            <div class="brand-title">FTC Link</div>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item"><a href="#about" class="active">What is FTC Link?</a></li>
+            <li class="nav-item"><a href="#features">Key Features</a></li>
+            <li class="nav-item"><a href="#installation">How to Install</a></li>
+            <li class="nav-item"><a href="#api-key">Getting an API Key</a></li>
+            <li class="nav-item"><a href="#usage">How to Use</a></li>
+            <li class="nav-item"><a href="#settings">Managing Settings & History</a></li>
+        </ul>
+    </sidebar>
+
+    <main>
+        <div class="container">
+            
+            <section id="about">
+                <h1>FTC Link User Guide</h1>
+                <p class="subtitle">Your smart coding partner designed specifically for FIRST Tech Challenge (FTC) robotics programming in Android Studio.</p>
+                
+                <div class="card">
+                    <h3>Built for FTC Teams</h3>
+                    <p>FTC Link lives directly inside your Android Studio environment. It helps you design robot mechanisms, write autonomous paths, configure motors and sensors, and debug Java/Kotlin robot code without ever switching windows.</p>
+                </div>
+            </section>
+
+            <section id="features">
+                <h2>Key Features</h2>
+                
+                <div class="card">
+                    <h3>📄 Reads Your Open File Automatically</h3>
+                    <p>When you ask a question, FTC Link automatically reads the Java or Kotlin code tab you currently have open. It understands your motor names, subsystem variables, and OpMode structure instantly.</p>
+                </div>
+
+                <div class="card">
+                    <h3>🌐 Multi-Language Support</h3>
+                    <p>Ask in English, Turkish, or any preferred language. FTC Link detects your language automatically and responds in the exact same language with clear explanations.</p>
+                </div>
+
+                <div class="card">
+                    <h3>💾 Automatic Memory & Persistent History</h3>
+                    <p>FTC Link remembers your past questions and robot configurations even if you close and reopen Android Studio. You can build multi-step robot code smoothly across multiple sessions.</p>
+                </div>
+
+                <div class="card">
+                    <h3>💻 Copy-Ready Code Blocks</h3>
+                    <p>Get ready-to-use code snippets formatted perfectly for FTC libraries (FTC SDK, RoadRunner, Pedro Pathing, REV Hardware, Telemetry) with clear step-by-step guidance.</p>
+                </div>
+
+                <div class="card">
+                    <h3>🧹 One-Click Clear Button</h3>
+                    <p>Want to start a new project or wipe old chat history? Simply click the <strong>Clear</strong> button at any time to refresh your chat panel.</p>
+                </div>
+            </section>
+
+            <section id="installation">
+                <h2>How to Install</h2>
+                <ol>
+                    <li>Open <strong>Android Studio</strong>.</li>
+                    <li>Go to <code>Settings</code> (or <code>Preferences</code> on Mac) > <strong>Plugins</strong>.</li>
+                    <li>Select the <strong>Marketplace</strong> tab and search for <strong>"FTC Link"</strong>.</li>
+                    <li>Click <strong>Install</strong> and restart Android Studio when prompted.</li>
+                </ol>
+            </section>
+
+            <section id="api-key">
+                <h2>Getting Your Free API Key (Step-by-Step)</h2>
+                <p>FTC Link uses Google's Gemini infrastructure to power its responses. You will need a free API key to get started:</p>
+                <br>
+                
+                <div class="card">
+                    <p><span class="step-number">1</span> Open your browser and go to <a href="https://aistudio.google.com/" target="_blank">aistudio.google.com</a>.</p>
+                </div>
+                <div class="card">
+                    <p><span class="step-number">2</span> Sign in with any Google Account (personal or team account).</p>
+                </div>
+                <div class="card">
+                    <p><span class="step-number">3</span> Click <strong>"🔑"</strong> on the left panel, then select <strong>"Create API key in new project"</strong>.</p>
+                </div>
+                <div class="card">
+                    <p><span class="step-number">4</span> Copy the generated key to your clipboard.</p>
+                </div>
+                <div class="card">
+                    <p><span class="step-number">5</span> Open Android Studio, enter the key when prompted, or go to <code>File > Settings > FTC Link</code> and paste your key into the text field.</p>
+                </div>
+            </section>
+
+            <section id="usage">
+                <h2>How to Use FTC Link</h2>
+                <p>Open the <strong>FTC Link</strong> panel on the right sidebar of Android Studio and start typing. Here are some examples of what you can ask:</p>
+                
+                <pre><code>// Example Questions:
+"Write a Mecanum drive TeleOp mode for 4 REV motors."
+"Add an encoder velocity control function to my open ArmSubsystem class."
+"How do I set up my autonomous trajectory using RoadRunner?"
+"Debug the encoder error in my current active OpMode."</code></pre>
+            </section>
+
+            <section id="settings">
+                <h2>Managing Settings & History</h2>
+                <ul>
+                    <li><strong>Changing API Keys:</strong> You can update or change your key anytime under <code>File > Settings > FTC Link</code> without reinstalling the plugin.</li>
+                    <li><strong>Clearing Chat History:</strong> To reset the panel and erase saved messages, click the <strong>Clear</strong> button at the bottom right corner and confirm the dialog box.</li>
+                </ul>
+            </section>
+
+        </div>
+    </main>
+
+    <script>
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-item a');
+
+        document.querySelector('main').addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (document.querySelector('main').scrollTop >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
