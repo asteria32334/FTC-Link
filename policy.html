@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — FTC Link</title>
+    <style>
+        :root {
+            --bg-color: #1e1e1e;
+            --panel-bg: #252526;
+            --text-color: #d4d4d4;
+            --accent-color: #528eff;
+            --border-color: #3e3e42;
+            --code-bg: #101010;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #a0a0a0;
+            margin-bottom: 32px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 16px;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: #ffffff;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 15px;
+            margin-bottom: 16px;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 16px;
+        }
+
+        li {
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        code {
+            font-family: "JetBrains Mono", Consolas, Monaco, monospace;
+            background-color: var(--code-bg);
+            color: #4ec9b0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 13.5px;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 13px;
+            color: #808080;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Privacy Policy for FTC Link</h1>
+        <div class="subtitle">Last Updated: October 28, 2026</div>
+
+        <p><strong>FTC Link</strong> is an integrated Android Studio plugin core built specifically for FIRST Tech Challenge (FTC) robot programming, code analysis, and subsystem optimization.</p>
+
+        <p>This Privacy Policy outlines how data is handled, stored, and processed when using the FTC Link plugin inside your IDE environment.</p>
+
+        <h2>1. Data Collection and Usage</h2>
+        <ul>
+            <li><strong>API Key Storage:</strong> FTC Link operates on a "Bring Your Own Key" (BYOK) structure. Your Google Gemini API key is stored <strong>locally on your machine</strong> using IntelliJ’s native storage properties (<code>PropertiesComponent</code>). Your API key is never collected, stored, or transmitted to any external servers owned by us.</li>
+            <li><strong>Active Code Scope & Context:</strong> When you send a query, the text contents of your active open editor file (such as Java or Kotlin OpModes or Subsystems) are bundled with your prompt and sent directly to the <strong>Google Gemini API</strong> for real-time analysis. We do not store or track your proprietary robot code.</li>
+            <li><strong>Local Session History:</strong> Your conversation history is cached locally within IDE properties to maintain chat context across sessions. This data remains strictly on your local computer.</li>
+        </ul>
+
+        <h2>2. Third-Party Services</h2>
+        <p>FTC Link communicates directly with <strong>Google AI (Gemini API)</strong> to process code analysis queries. We do not integrate any external analytics, tracking scripts, telemetry pixels, or third-party advertising frameworks into the plugin.</p>
+
+        <h2>3. Data Security</h2>
+        <p>We prioritize developer privacy and code security. Because credentials and interaction logs reside exclusively within your local development workspace, external unauthorized access to your source code or keys via FTC Link is prevented.</p>
+
+        <h2>4. Changes to This Privacy Policy</h2>
+        <p>We may update our Privacy Policy periodically to reflect plugin enhancements or legal compliance changes. Any updates will be published directly to this page with a revised date.</p>
+
+        <h2>5. Contact Us</h2>
+        <p>If you have questions, concerns, or inquiries regarding this Privacy Policy or data handling in FTC Link, please submit an issue on our official project repository or contact our developer support channel.</p>
+
+        <div class="footer">
+            &copy; 2026 FTC Link. All rights reserved.
+        </div>
+    </div>
+
+</body>
+</html>
